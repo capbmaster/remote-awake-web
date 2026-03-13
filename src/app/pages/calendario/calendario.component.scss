@@ -1,6 +1,9 @@
 .container {
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--md-sys-color-background);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -58,6 +61,7 @@
   padding-left: 90px;
   padding-right: 90px;
   margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .info-card, .calendar-card {

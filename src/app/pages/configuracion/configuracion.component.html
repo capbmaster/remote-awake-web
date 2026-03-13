@@ -1,1 +1,86 @@
-<p>configuracion works!</p>
+<div class="container">
+  <header class="header">
+    <h1>Remote Awake</h1>
+  </header>
+
+  <mat-tab-group class="tabs" [selectedIndex]="1" (selectedIndexChange)="onTabChange($event)">
+    <mat-tab label="Inicio"></mat-tab>
+    <mat-tab label="Configuración"></mat-tab>
+    <mat-tab label="Favoritos"></mat-tab>
+  </mat-tab-group>
+
+  <div class="content">
+    <h2 class="title">Número de Alarmas por evento</h2>
+    
+    <h3 class="calendar-title">Calendario 1</h3>
+    
+    <div class="config-row">
+      <span class="alarm-type">Alarma principal con respaldos</span>
+      <div class="config-inputs">
+        <mat-form-field class="number-input">
+          <mat-label>No. Alarmas por evento</mat-label>
+          <input matInput type="number" value="3">
+        </mat-form-field>
+        
+        <div class="time-range">
+          <span class="range-label">Rango horario para aplicar el tipo de alarma</span>
+          <div class="time-inputs">
+            <mat-form-field class="time-input">
+              <input matInput type="time" value="00:00">
+            </mat-form-field>
+            <span class="separator">:</span>
+            <mat-form-field class="time-input">
+              <input matInput type="time" value="04:59">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <span class="alarm-type">Alarma con Anti-snooze</span>
+      <div class="config-inputs">
+        <mat-form-field class="number-input">
+          <mat-label>No. Alarmas por evento</mat-label>
+          <input matInput type="number" value="1">
+        </mat-form-field>
+        
+        <div class="time-range">
+          <span class="range-label">Rango horario para aplicar el tipo de alarma</span>
+          <div class="time-inputs">
+            <mat-form-field class="time-input">
+              <input matInput type="time" value="05:00">
+            </mat-form-field>
+            <span class="separator">:</span>
+            <mat-form-field class="time-input">
+              <input matInput type="time" value="05:59">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="config-row">
+      <span class="alarm-type">Alarma normal</span>
+      <div class="config-inputs">
+        <mat-form-field class="number-input">
+          <mat-label>No. Alarmas por evento</mat-label>
+          <input matInput type="number" value="1">
+        </mat-form-field>
+        
+        <div class="time-range">
+          <span class="range-label">Rango horario para aplicar el tipo de alarma</span>
+          <div class="time-inputs">
+            <mat-form-field class="time-input">
+              <input matInput type="time" value="06:00">
+            </mat-form-field>
+            <span class="separator">:</span>
+            <mat-form-field class="time-input">
+              <input matInput type="time" value="09:00">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

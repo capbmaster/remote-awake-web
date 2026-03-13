@@ -102,6 +102,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--md-sys-color-background);

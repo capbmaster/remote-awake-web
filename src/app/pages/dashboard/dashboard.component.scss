@@ -1,0 +1,186 @@
+.container {
+  height: 100vh;
+  background-color: var(--md-sys-color-background);
+  overflow-y: auto;
+  position: relative;
+}
+
+.header {
+  background-color: var(--md-sys-color-primary);
+  padding: 63.5px 79px;
+  margin-bottom: 0;
+  
+  h1 {
+    color: var(--md-sys-color-secondary-container);
+    font-size: 57px;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  background-color: var(--md-sys-color-surface);
+  padding: 0;
+  margin: 0;
+  
+  ::ng-deep .mat-mdc-tab-group {
+    width: 1189px !important;
+    max-width: 1189px !important;
+  }
+  
+  ::ng-deep .mat-mdc-tab-header {
+    background-color: var(--md-sys-color-surface);
+    width: 1189px !important;
+  }
+  
+  ::ng-deep .mat-mdc-tab-labels {
+    justify-content: flex-start;
+    width: 1189px !important;
+  }
+  
+  ::ng-deep .mat-mdc-tab {
+    font-size: 45px;
+    width: 396.33px;
+    min-width: 396.33px;
+    max-width: 396.33px;
+    padding: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.content {
+  padding: 53px 79px;
+}
+
+.title {
+  font-size: 57px;
+  font-weight: 400;
+  color: var(--md-sys-color-primary);
+  margin: 0 0 60px 0;
+  height: 61px;
+  line-height: 61px;
+  max-width: 598px;
+  text-align: left;
+}
+
+.alarms-container {
+  display: flex;
+  gap: 0;
+  margin-bottom: 80px;
+  margin-top: 63px;
+  align-items: stretch;
+}
+
+.divider {
+  height: 502px;
+  border-right-color: var(--md-sys-color-outline-variant);
+  border-right-width: 1px;
+  margin: 0 58.5px;
+}
+
+.alarm-column {
+  text-align: center;
+  
+  &:nth-child(1) {
+    width: 496px;
+  }
+  
+  &:nth-child(3) {
+    width: 383px;
+  }
+  
+  &:nth-child(5) {
+    width: 237px;
+  }
+  
+  h3 {
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--md-sys-color-tertiary);
+    margin: 0 0 80px 0;
+    height: 44px;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .event-name {
+    font-size: 32px;
+    color: var(--md-sys-color-primary);
+    margin: 0 0 40px 0;
+  }
+}
+
+.alarm-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 16px;
+  
+  ::ng-deep .mat-mdc-checkbox {
+    --mdc-checkbox-selected-icon-color: white;
+    --mdc-checkbox-selected-hover-icon-color: white;
+    --mdc-checkbox-selected-pressed-icon-color: white;
+    --mdc-checkbox-selected-checkmark-color: white;
+    --mdc-checkbox-unselected-icon-color: var(--md-sys-color-tertiary);
+    --mdc-checkbox-unselected-hover-icon-color: var(--md-sys-color-tertiary);
+    --mdc-checkbox-unselected-pressed-icon-color: var(--md-sys-color-tertiary);
+  }
+  
+  ::ng-deep .mdc-checkbox {
+    width: 40px;
+    height: 40px;
+  }
+  
+  ::ng-deep .mdc-checkbox__background {
+    width: 40px;
+    height: 40px;
+    border-width: 5px !important;
+  }
+  
+  ::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__background {
+    background-color: var(--md-sys-color-tertiary) !important;
+    border-color: var(--md-sys-color-tertiary) !important;
+  }
+  
+  ::ng-deep .mat-mdc-checkbox:not(.mat-mdc-checkbox-checked) .mdc-checkbox__background {
+    background-color: transparent !important;
+    border-color: var(--md-sys-color-tertiary) !important;
+  }
+  
+  ::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__checkmark {
+    color: white !important;
+  }
+  
+  ::ng-deep .mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__checkmark-path {
+    stroke: white !important;
+  }
+  
+  .time {
+    font-size: 24px;
+    color: var(--md-sys-color-on-surface);
+    width: 155px;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.link-button {
+  position: absolute;
+  top: 951px;
+  left: 1311px;
+  width: 243px;
+  height: 98px;
+  font-size: 16px;
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+  border-radius: 100px;
+  padding: 16px 32px;
+}
