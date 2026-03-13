@@ -22,14 +22,14 @@ export class SelectCalendarComponent {
   }
 
   onConectarOutlook() {
-    // Maqueta: sin lógica
+    this.router.navigate(['/permitir-acceso']);
   }
 
   onConectarGmail() {
-    // Maqueta: sin lógica
+    this.router.navigate(['/permitir-acceso']);
   }
 
   onConectarIcal() {
-    // Maqueta: sin lógica
+    this.router.navigate(['/permitir-acceso']);
   }
 }
