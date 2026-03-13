@@ -29,10 +29,10 @@ export class PermitirAccesoComponent {
   }
 
   onDenegar() {
-    // Maqueta: sin lógica
+    this.router.navigate(['/select-calendar']);
   }
 
   onPermitir() {
-    // Maqueta: sin lógica
+    this.router.navigate(['/calendario']);
   }
 }
