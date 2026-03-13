@@ -14,70 +14,96 @@
     
     <h3 class="calendar-title">Calendario 1</h3>
     
-    <div class="config-row">
-      <span class="alarm-type">Alarma principal con respaldos</span>
-      <div class="config-inputs">
-        <mat-form-field class="number-input">
-          <mat-label>No. Alarmas por evento</mat-label>
-          <input matInput type="number" value="3">
-        </mat-form-field>
-        
-        <div class="time-range">
-          <span class="range-label">Rango horario para aplicar el tipo de alarma</span>
-          <div class="time-inputs">
-            <mat-form-field class="time-input">
-              <input matInput type="time" value="00:00">
-            </mat-form-field>
-            <span class="separator">:</span>
-            <mat-form-field class="time-input">
-              <input matInput type="time" value="04:59">
-            </mat-form-field>
+    <div class="table-container">
+      <div class="table-header">
+        <div class="header-alarm-type"></div>
+        <div class="header-number">No. Alarmas por evento</div>
+        <div class="header-time-range">Rango horario para aplicar el tipo de alarma</div>
+      </div>
+      
+      <div class="config-row">
+        <span class="alarm-type">Alarma principal con respaldos</span>
+        <div class="number-container">
+          <input type="number" class="number-input" value="3">
+        </div>
+        <div class="time-range-container">
+          <div class="time-picker">
+            <input type="text" class="time-field hour" value="00" maxlength="2">
+            <span class="time-separator">:</span>
+            <input type="text" class="time-field minute" value="00" maxlength="2">
+            <button class="period-toggle" (click)="togglePeriod(0, true)">
+              <span [class.selected]="periods[0].startPeriod === 'AM'">AM</span>
+              <span class="period-divider"></span>
+              <span [class.selected]="periods[0].startPeriod === 'PM'">PM</span>
+            </button>
+          </div>
+          <div class="time-picker">
+            <input type="text" class="time-field hour" value="04" maxlength="2">
+            <span class="time-separator">:</span>
+            <input type="text" class="time-field minute" value="59" maxlength="2">
+            <button class="period-toggle" (click)="togglePeriod(0, false)">
+              <span [class.selected]="periods[0].endPeriod === 'AM'">AM</span>
+              <span class="period-divider"></span>
+              <span [class.selected]="periods[0].endPeriod === 'PM'">PM</span>
+            </button>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="config-row">
-      <span class="alarm-type">Alarma con Anti-snooze</span>
-      <div class="config-inputs">
-        <mat-form-field class="number-input">
-          <mat-label>No. Alarmas por evento</mat-label>
-          <input matInput type="number" value="1">
-        </mat-form-field>
-        
-        <div class="time-range">
-          <span class="range-label">Rango horario para aplicar el tipo de alarma</span>
-          <div class="time-inputs">
-            <mat-form-field class="time-input">
-              <input matInput type="time" value="05:00">
-            </mat-form-field>
-            <span class="separator">:</span>
-            <mat-form-field class="time-input">
-              <input matInput type="time" value="05:59">
-            </mat-form-field>
+      <div class="config-row">
+        <span class="alarm-type">Alarma con Anti-snooze</span>
+        <div class="number-container">
+          <input type="number" class="number-input" value="1">
+        </div>
+        <div class="time-range-container">
+          <div class="time-picker">
+            <input type="text" class="time-field hour" value="05" maxlength="2">
+            <span class="time-separator">:</span>
+            <input type="text" class="time-field minute" value="00" maxlength="2">
+            <button class="period-toggle" (click)="togglePeriod(1, true)">
+              <span [class.selected]="periods[1].startPeriod === 'AM'">AM</span>
+              <span class="period-divider"></span>
+              <span [class.selected]="periods[1].startPeriod === 'PM'">PM</span>
+            </button>
+          </div>
+          <div class="time-picker">
+            <input type="text" class="time-field hour" value="05" maxlength="2">
+            <span class="time-separator">:</span>
+            <input type="text" class="time-field minute" value="59" maxlength="2">
+            <button class="period-toggle" (click)="togglePeriod(1, false)">
+              <span [class.selected]="periods[1].endPeriod === 'AM'">AM</span>
+              <span class="period-divider"></span>
+              <span [class.selected]="periods[1].endPeriod === 'PM'">PM</span>
+            </button>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="config-row">
-      <span class="alarm-type">Alarma normal</span>
-      <div class="config-inputs">
-        <mat-form-field class="number-input">
-          <mat-label>No. Alarmas por evento</mat-label>
-          <input matInput type="number" value="1">
-        </mat-form-field>
-        
-        <div class="time-range">
-          <span class="range-label">Rango horario para aplicar el tipo de alarma</span>
-          <div class="time-inputs">
-            <mat-form-field class="time-input">
-              <input matInput type="time" value="06:00">
-            </mat-form-field>
-            <span class="separator">:</span>
-            <mat-form-field class="time-input">
-              <input matInput type="time" value="09:00">
-            </mat-form-field>
+      <div class="config-row">
+        <span class="alarm-type">Alarma normal</span>
+        <div class="number-container">
+          <input type="number" class="number-input" value="1">
+        </div>
+        <div class="time-range-container">
+          <div class="time-picker">
+            <input type="text" class="time-field hour" value="06" maxlength="2">
+            <span class="time-separator">:</span>
+            <input type="text" class="time-field minute" value="00" maxlength="2">
+            <button class="period-toggle" (click)="togglePeriod(2, true)">
+              <span [class.selected]="periods[2].startPeriod === 'AM'">AM</span>
+              <span class="period-divider"></span>
+              <span [class.selected]="periods[2].startPeriod === 'PM'">PM</span>
+            </button>
+          </div>
+          <div class="time-picker">
+            <input type="text" class="time-field hour" value="09" maxlength="2">
+            <span class="time-separator">:</span>
+            <input type="text" class="time-field minute" value="00" maxlength="2">
+            <button class="period-toggle" (click)="togglePeriod(2, false)">
+              <span [class.selected]="periods[2].endPeriod === 'AM'">AM</span>
+              <span class="period-divider"></span>
+              <span [class.selected]="periods[2].endPeriod === 'PM'">PM</span>
+            </button>
           </div>
         </div>
       </div>

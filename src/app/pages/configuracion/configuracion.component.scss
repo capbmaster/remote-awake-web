@@ -1,6 +1,9 @@
 .container {
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--md-sys-color-background);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -52,7 +55,8 @@
 }
 
 .content {
-  padding: 60px 90px;
+  padding: 60px 79px;
+  flex-shrink: 0;
 }
 
 .title {
@@ -69,74 +73,183 @@
   margin: 0 0 40px 0;
 }
 
+.table-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 116px;
+  
+  .header-alarm-type {
+    width: 477px;
+  }
+  
+  .header-number {
+    width: 368px;
+    height: 76px;
+    font-size: 32px;
+    color: var(--md-sys-color-surface-tint);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-time-range {
+    width: 368px;
+    font-size: 32px;
+    color: var(--md-sys-color-surface-tint);
+    text-align: center;
+    margin-left: 16px;
+    line-height: 1.2;
+  }
+}
+
 .config-row {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
-  gap: 60px;
+  gap: 116px;
   
   .alarm-type {
-    font-size: 45px;
+    font-size: 36px;
     color: var(--md-sys-color-tertiary);
-    min-width: 400px;
+    width: 477px;
+    white-space: nowrap;
   }
   
-  .config-inputs {
+  .number-container {
+    width: 368px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 80px;
-    flex: 1;
   }
   
   .number-input {
-    width: 200px;
+    width: 108px;
+    height: 65px;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 28px;
+    text-align: center;
+    color: var(--md-sys-color-primary);
+    outline: none;
+    -moz-appearance: textfield;
     
-    ::ng-deep .mat-mdc-text-field-wrapper {
-      background-color: var(--md-sys-color-surface);
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
     
-    ::ng-deep .mat-mdc-form-field-infix {
-      font-size: 32px;
-    }
-    
-    ::ng-deep input {
-      font-size: 32px;
-      text-align: center;
+    &:focus {
+      border-color: var(--md-sys-color-primary);
+      border-width: 2px;
     }
   }
   
-  .time-range {
+  .time-range-container {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    flex: 1;
+    margin-left: 24px;
+  }
+  
+  .time-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .time-field {
+    width: 48.98px;
+    height: 39.72px;
+    border: 2px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    background-color: var(--md-sys-color-surface-container-highest);
+    font-size: 32px;
+    text-align: center;
+    color: #000000;
+    outline: none;
+    font-weight: 400;
+    
+    &:focus {
+      border-color: var(--md-sys-color-primary);
+      background-color: var(--md-sys-color-primary-container);
+    }
+    
+    &.hour {
+      background-color: var(--md-sys-color-primary-container);
+    }
+  }
+  
+  .time-separator {
+    font-size: 32px;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 700;
+  }
+  
+  .period-toggle {
+    width: 31.2px;
+    height: 39.72px;
+    border: 2px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
     
-    .range-label {
-      font-size: 28px;
-      color: var(--md-sys-color-on-surface);
+    &:hover {
+      background-color: var(--md-sys-color-surface-container-highest);
     }
     
-    .time-inputs {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+    &:focus {
+      border-color: var(--md-sys-color-primary);
+    }
+    
+    span {
+      width: 100%;
+      text-align: center;
+      background-color: var(--md-sys-color-surface-container-highest);
+      color: #000000;
+      padding: 4px 0;
       
-      .time-input {
-        width: 120px;
-        
-        ::ng-deep .mat-mdc-text-field-wrapper {
-          background-color: var(--md-sys-color-surface);
-        }
-        
-        ::ng-deep input {
-          font-size: 28px;
-          text-align: center;
-        }
+      &.selected {
+        background-color: var(--md-sys-color-tertiary);
+        color: #FFFFFF;
       }
       
-      .separator {
-        font-size: 32px;
-        color: var(--md-sys-color-on-surface);
+      &:first-child {
+        border-bottom: 1px solid #000000;
+        padding-bottom: 2px;
+      }
+      
+      &:last-child {
+        padding-top: 2px;
       }
     }
+  }
+  
+  .period-divider {
+    display: none;
+  }
+  
+  .range-separator {
+    font-size: 32px;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 400;
   }
 }
