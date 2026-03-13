@@ -1,1 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  /* Light Theme */
+  --md-sys-color-primary: #4C5C92;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #DCE1FF;
+  --md-sys-color-on-primary-container: #344479;
+  
+  --md-sys-color-secondary: #445E91;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #D8E2FF;
+  --md-sys-color-on-secondary-container: #2B4678;
+  
+  --md-sys-color-tertiary: #006877;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #A2EEFF;
+  --md-sys-color-on-tertiary-container: #004E5A;
+  
+  --md-sys-color-error: #904A46;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #FFDAD7;
+  --md-sys-color-on-error-container: #733330;
+  
+  --md-sys-color-background: #FAF8FF;
+  --md-sys-color-on-background: #1A1B21;
+  
+  --md-sys-color-surface: #F9F9FF;
+  --md-sys-color-on-surface: #1A1C20;
+  --md-sys-color-surface-variant: #DFE2EB;
+  --md-sys-color-on-surface-variant: #43474E;
+  
+  --md-sys-color-outline: #73777F;
+  --md-sys-color-outline-variant: #C3C6CF;
+  
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  
+  --md-sys-color-inverse-surface: #2E3036;
+  --md-sys-color-inverse-on-surface: #F0F0F7;
+  --md-sys-color-inverse-primary: #B6C4FF;
+  
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F3F3FA;
+  --md-sys-color-surface-container: #EDEDF4;
+  --md-sys-color-surface-container-high: #E8E8EE;
+  --md-sys-color-surface-container-highest: #E2E2E9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Theme */
+    --md-sys-color-primary: #B6C4FF;
+    --md-sys-color-on-primary: #1D2D61;
+    --md-sys-color-primary-container: #344479;
+    --md-sys-color-on-primary-container: #DCE1FF;
+    
+    --md-sys-color-secondary: #ADC6FF;
+    --md-sys-color-on-secondary: #112F60;
+    --md-sys-color-secondary-container: #2B4678;
+    --md-sys-color-on-secondary-container: #D8E2FF;
+    
+    --md-sys-color-tertiary: #83D2E3;
+    --md-sys-color-on-tertiary: #00363E;
+    --md-sys-color-tertiary-container: #004E5A;
+    --md-sys-color-on-tertiary-container: #A2EEFF;
+    
+    --md-sys-color-error: #FFB3AD;
+    --md-sys-color-on-error: #571E1B;
+    --md-sys-color-error-container: #733330;
+    --md-sys-color-on-error-container: #FFDAD7;
+    
+    --md-sys-color-background: #121318;
+    --md-sys-color-on-background: #E3E1E9;
+    
+    --md-sys-color-surface: #111318;
+    --md-sys-color-on-surface: #E2E2E9;
+    --md-sys-color-surface-variant: #43474E;
+    --md-sys-color-on-surface-variant: #C3C6CF;
+    
+    --md-sys-color-outline: #8D9199;
+    --md-sys-color-outline-variant: #43474E;
+    
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-scrim: #000000;
+    
+    --md-sys-color-inverse-surface: #E2E2E9;
+    --md-sys-color-inverse-on-surface: #2E3036;
+    --md-sys-color-inverse-primary: #4C5C92;
+    
+    --md-sys-color-surface-container-lowest: #0C0E13;
+    --md-sys-color-surface-container-low: #1A1C20;
+    --md-sys-color-surface-container: #1E2025;
+    --md-sys-color-surface-container-high: #282A2F;
+    --md-sys-color-surface-container-highest: #33353A;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+}

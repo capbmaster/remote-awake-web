@@ -1,0 +1,33 @@
+<div class="container">
+  <header class="header">
+    <h1>Remote Awake</h1>
+  </header>
+
+  <mat-tab-group class="tabs">
+    <mat-tab label="Inicio"></mat-tab>
+    <mat-tab label="Configuración"></mat-tab>
+    <mat-tab label="Favoritos"></mat-tab>
+  </mat-tab-group>
+
+  <div class="content">
+    <div class="info-card">
+      <p>Las alarmas están vinculadas a los eventos de un calendario conectado</p>
+    </div>
+
+    <div class="calendar-card">
+      <h2>Seleccione el calendario</h2>
+      <div class="calendar-list">
+        @for (calendario of calendarios; track calendario.id) {
+          <div class="calendar-item">
+            <mat-checkbox [(ngModel)]="calendario.seleccionado" color="primary">
+              {{ calendario.nombre }}
+            </mat-checkbox>
+          </div>
+        }
+      </div>
+      <div class="button-container">
+        <button mat-raised-button color="primary">Importar</button>
+      </div>
+    </div>
+  </div>
+</div>
