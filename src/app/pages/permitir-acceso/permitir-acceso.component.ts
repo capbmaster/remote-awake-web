@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-calendario',
-  imports: [MatTabsModule, MatCheckboxModule, MatButtonModule, FormsModule],
-  templateUrl: './calendario.component.html',
-  styleUrl: './calendario.component.scss'
+  selector: 'app-permitir-acceso',
+  standalone: true,
+  imports: [MatTabsModule, MatCheckboxModule, MatIconModule, FormsModule],
+  templateUrl: './permitir-acceso.component.html',
+  styleUrl: './permitir-acceso.component.scss'
 })
-export class CalendarioComponent {
-  calendarios = [
-    { id: 1, nombre: 'Calendario 1', seleccionado: false },
-    { id: 2, nombre: 'Calendario 2', seleccionado: false },
-    { id: 3, nombre: 'Calendario 3', seleccionado: false }
-  ];
+export class PermitirAccesoComponent {
+  calendarioChecked = false;
+  horaChecked = false;
 
   constructor(private router: Router) {}
 
@@ -30,7 +28,11 @@ export class CalendarioComponent {
     }
   }
 
-  onImportar() {
-    this.router.navigate(['/dashboard']);
+  onDenegar() {
+    this.router.navigate(['/select-calendar']);
+  }
+
+  onPermitir() {
+    this.router.navigate(['/calendario']);
   }
 }

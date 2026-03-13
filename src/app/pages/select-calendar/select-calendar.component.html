@@ -1,0 +1,58 @@
+<div class="container">
+  <header class="header">
+    <h1>Remote Awake</h1>
+  </header>
+
+  <mat-tab-group class="tabs" [selectedIndex]="0" (selectedIndexChange)="onTabChange($event)">
+    <mat-tab label="Inicio"></mat-tab>
+    <mat-tab label="Configuración"></mat-tab>
+    <mat-tab label="Favoritos"></mat-tab>
+  </mat-tab-group>
+
+  <div class="content">
+    <h2 class="title">Conectar Calendario</h2>
+
+    <div class="connect-layout">
+      <div class="connect-buttons">
+        <button class="connect-btn" (click)="onConectarOutlook()">
+          <mat-icon class="connect-icon">add_circle</mat-icon>
+          <span>Conectar con Outlook</span>
+        </button>
+        <button class="connect-btn" (click)="onConectarGmail()">
+          <mat-icon class="connect-icon">add_circle</mat-icon>
+          <span>Conectar con Gmail</span>
+        </button>
+        <button class="connect-btn" (click)="onConectarIcal()">
+          <mat-icon class="connect-icon">add_circle</mat-icon>
+          <span>Conectar con ical</span>
+        </button>
+      </div>
+
+      <aside class="connect-info">
+        <div class="info-card">
+          <div class="info-icon">
+            <mat-icon>event_note</mat-icon>
+          </div>
+          <h3 class="info-title">¿Cómo funciona?</h3>
+          <p class="info-description">
+            Las alarmas están vinculadas a los eventos de un calendario conectado.
+          </p>
+          <ul class="info-benefits">
+            <li>
+              <mat-icon class="benefit-icon">check_circle</mat-icon>
+              <span>Cada evento del calendario genera sus propias alarmas</span>
+            </li>
+            <li>
+              <mat-icon class="benefit-icon">check_circle</mat-icon>
+              <span>Sincronización automática con tus reuniones y citas</span>
+            </li>
+            <li>
+              <mat-icon class="benefit-icon">check_circle</mat-icon>
+              <span>Configurable por tipo de alarma y horario</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

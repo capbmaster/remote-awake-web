@@ -1,0 +1,60 @@
+<div class="container">
+  <header class="header">
+    <h1>Remote Awake</h1>
+  </header>
+
+  <mat-tab-group class="tabs" [selectedIndex]="2" (selectedIndexChange)="onTabChange($event)">
+    <mat-tab label="Inicio"></mat-tab>
+    <mat-tab label="Configuración"></mat-tab>
+    <mat-tab label="Favoritos"></mat-tab>
+  </mat-tab-group>
+
+  <div class="content">
+    <h2 class="title">Favoritos</h2>
+
+    <div class="table-container">
+      <div class="table-header">
+        <div class="header-descripcion">Descripción</div>
+        <div class="header-horario">Horario</div>
+        <div class="header-acciones">Acciones</div>
+      </div>
+
+      @for (favorito of favoritos; track favorito.id; let i = $index) {
+        <div class="table-row">
+          <span class="row-descripcion">{{ favorito.descripcion }}</span>
+          <div class="row-horario">
+            <div class="time-picker">
+              <input
+                type="text"
+                class="time-field hour"
+                [(ngModel)]="favorito.hour"
+                maxlength="2"
+              />
+              <span class="time-separator">:</span>
+              <input
+                type="text"
+                class="time-field minute"
+                [(ngModel)]="favorito.minute"
+                maxlength="2"
+              />
+              <button class="period-toggle" (click)="togglePeriod(i)">
+                <span [class.selected]="favorito.period === 'AM'">AM</span>
+                <span class="period-divider"></span>
+                <span [class.selected]="favorito.period === 'PM'">PM</span>
+              </button>
+            </div>
+          </div>
+          <div class="row-acciones">
+            <button
+              type="button"
+              class="btn-eliminar"
+              (click)="onEliminar(i)"
+            >
+              Eliminar de favoritos
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

@@ -18,6 +18,8 @@ export class DashboardComponent {
   onTabChange(index: number) {
     if (index === 1) {
       this.router.navigate(['/configuracion']);
+    } else if (index === 2) {
+      this.router.navigate(['/favoritos']);
     }
   }
 
