@@ -8,5 +8,6 @@ export const routes: Routes = [
   { path: 'select-calendar', loadComponent: () => import('./pages/select-calendar/select-calendar.component').then(m => m.SelectCalendarComponent) },
   { path: 'permitir-acceso', loadComponent: () => import('./pages/permitir-acceso/permitir-acceso.component').then(m => m.PermitirAccesoComponent) },
   { path: 'configuracion', loadComponent: () => import('./pages/configuracion/configuracion.component').then(m => m.ConfiguracionComponent) },
+  { path: 'favoritos', loadComponent: () => import('./pages/favoritos/favoritos.component').then(m => m.FavoritosComponent) },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];

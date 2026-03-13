@@ -25,7 +25,7 @@ export class ConfiguracionComponent {
     if (index === 0) {
       this.router.navigate(['/dashboard']);
     } else if (index === 2) {
-      // Navegación a favoritos cuando esté implementado
+      this.router.navigate(['/favoritos']);
     }
   }
 

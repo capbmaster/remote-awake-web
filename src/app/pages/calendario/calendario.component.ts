@@ -25,6 +25,8 @@ export class CalendarioComponent {
       this.router.navigate(['/dashboard']);
     } else if (index === 1) {
       this.router.navigate(['/configuracion']);
+    } else if (index === 2) {
+      this.router.navigate(['/favoritos']);
     }
   }
 
